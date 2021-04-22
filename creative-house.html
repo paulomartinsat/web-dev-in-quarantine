@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8>
+        <title>Casa Criativa</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+<!--Style in CSS-->
+    
+			<style>
+
+body { 
+background: #e5e5e5;
+color : rgb(65, 71, 90);
+font-family: 'Noto Sans', sans-serif;
+
+margin: 0%;
+
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(233, 116, 103);
+    font-weight: bold;
+}
+p, .description {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0,1px;
+}
+a:hover {
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(114, 7, 100);
+
+}
+#container {
+    max-width: 980px;
+    margin: 40px auto;
+    width: 80%;
+    display: flex;
+}
+
+#intro {
+    width: 500px;
+    margin-right: 20px;
+    margin-top: -8px;
+    
+
+}
+
+main {
+    margin: 32px 0;
+    
+
+    
+   
+}
+p {
+    font-size: 18px;
+    
+}
+/* .fat= nova ideia */
+button.fat{
+    color: white;
+    background: rgb(230, 86, 70);
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+    box-shadow: 0px 5px 12px rgba(255, 0, 92, 0.42);
+    
+}
+    
+#buttons {
+    margin: 32px;
+    display: flex;
+    margin-bottom: 32px;
+    justify-content: space-evenly ;
+
+}
+button{
+    background: none;
+    border: none;
+    color: salmon;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 0,2px;
+    font-size: 14px;
+
+
+
+}  
+button:hover {
+    text-decoration: none;
+    color: rgb(148, 14, 14);
+}
+
+button.fat:hover {text-decoration: none;}
+
+
+#buttons, footer {
+    text-align: center;
+
+}
+
+/* Author credits */   
+footer {
+    
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: -630px;
+    right: 560px;
+    border-radius: 9px;
+    
+    color: rgb(22, 22, 22);
+    font-weight: 300;
+   
+
+    
+}
+footer a {
+    color: rgba(187, 6, 6, 0.938);
+    font-weight: 700;
+    
+
+}
+footer a:hover {
+    color: rgb(197, 45, 29);
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0.7;
+}
+/* Banner images */
+.idea {
+    display: flex;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 16px -12px grey;
+    border-radius: 10px;
+    padding: 32px;
+
+}
+
+.idea img {
+    width: 70px;
+    height: 70px;
+    margin-right: 32px;
+
+
+
+}
+
+.idea h3 {
+    margin: 0px;
+
+}
+
+.idea p {
+    margin: 8px 0;
+    color: rgb(127, 143, 133);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.idea .description {
+    margin: 16px 0;
+
+
+}
+
+/* Pop-up config */
+
+#modal {
+    background: indianred;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    transition: 300ms;
+
+}
+
+#modal .content {
+    margin-top: 128px;
+    color: white;
+
+}
+
+#modal .content h1 {
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.content form {
+    max-width: 800px;
+    width: 80%;
+
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.content form div:nth-child(1) {
+    width: 278px;
+}
+
+.content form div:nth-child(2) {
+    width: 310px;
+}
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5) {
+    grid-column: span 2;
+}
+.inpu-wrapper {
+    margin: 17px 0 ;
+
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid grey;
+    outline: none;
+    font-size: 16px;
+
+}
+form label {
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0,2px;
+    
+
+}
+form a {
+    background: #e7e6ebc2;
+    color:grey;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 32px;
+    justify-content: center;
+    transition: 300ms;
+
+
+
+}
+
+form a:hover {
+    color: white;
+    background: red;
+}
+form button {
+    background: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 32px;
+    grid-column: 2;
+    justify-self: end;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 300ms;
+
+
+}
+
+form button:hover {
+    background-color: teal;
+    color: white;
+    text-decoration: none;
+
+}
+
+#modal.hide {
+    opacity: 0;
+    visibility: hidden;
+    
+    
+}
+        
+         </style>
+    
+    </head>
+
+        <body>
+            <div id="container">
+                <section id="intro">
+                    <header>
+                        <img src="logo 1.png" alt="Imagem da logomarca">
+                    </header>
+                    <main>
+                        <p>Ficar em casa por <strong>períodos longos</strong> não deve ser nada fácil.</p>
+                        <p>Por esse motivo, iremos catalogar ideias,<strong> brincadeiras, jogos, filmes, livros, dicas</strong> e
+                            tudo que for necessário para tornar esse momento mais interessante.</p>
+                        <p>Comece clicando em <a href="#">ver ideias</a> para ver as ideias cadastradas e contribua <a
+                                href=#>adicionando sua ideia.</a> </p>
+            
+            
+                    </main>
+            
+                    <section id="buttons">
+                        <button onclick="onoff()">+ Adicionar Ideia</button>
+                        <button class="fat">Ver Ideias</button>
+            
+                    </section>
+            
+                    <footer>Desenvolvido por <a href="http://instagram.com/paulomartinsp/">Paulo Martins</a></footer>
+                </section>
+            
+            
+            
+            
+                <section id="last-ideias">
+                    <div class="idea">
+                        <img src="https://image.flaticon.com/icons/png/128/3081/3081495.png" alt="Estudo pelo PC">
+            
+                        <div class="content">
+                            <h3>Estudo pelo PC</h3>
+                            <p>Estudo</p>
+                            <div class="description">
+                                Ideias de cursos educativos para complementar sua vida profissional ou pessoal. E o melhor, ficando
+                                em casa.
+            
+                            </div>
+                            <a href="#">Ir para a ideia</a>
+                        </div>
+                    </div>
+            
+                    <div class="idea">
+                        <img src="https://image.flaticon.com/icons/png/128/3081/3081467.png" alt="Exercícios em casa">
+            
+                        <div class="content">
+                            <h3>Exercícios</h3>
+                            <p>Saúde</p>
+                            <div class="description">
+                                Ideias de exercícios físicos para manter a saúde em dia.
+            
+                            </div>
+                            <a href="#">Ir para a ideia</a>
+                        </div>
+                    </div>
+            
+                    <div class="idea">
+                        <img src="https://image.flaticon.com/icons/png/128/3081/3081459.png" alt="Culinária">
+            
+                        <div class="content">
+                            <h3>Receitas</h3>
+                            <p>Culinária</p>
+                            <div class="description">
+                                Ideias de receitas incríveis para acabar com o tédio e com a fome.</div>
+                            <a href="#">Ir para a ideia</a>
+                        </div>
+                    </div>
+            
+                        <div class="idea">
+                            <img src="https://image.flaticon.com/icons/png/128/3081/3081452.png" alt="Jogos eletrônicos">
+            
+                            <div class="content">
+                                <h3>Videogames</h3>
+                                <p>Jogos e atividades</p>
+                                <div class="description">
+                                    Ideias de jogos eletrônicos e atividades para curtir com a família ou com os amigos online. Viva
+                                    novas aventuras e explore novos mundos estando em casa!.
+                                </div>
+            
+                                <a href="#">Ir para a ideia</a>
+                            </div>
+                        </div>
+            
+            
+            
+                    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                </section>
+                
+
+
+            </div>
+            
+            <!-- Pop- up -->
+            <div id="modal" class="hide">
+                <div class="content">
+                    <h1>Nova Ideia</h1>
+<form action="">
+    <div class="input-wrapper"><label for="title">Título da ideia:</label>
+        <input type="text" name="title">
+    </div>
+
+
+    <div class="input-wrapper"> <label for="category">Categoria:</label>
+        <input type="text" name="category">
+    </div>
+
+    <div class="input-wrapper"><label for="image">Link da imagem:</label>
+        <input type="url" name="image">
+    </div>
+
+    <div class="input-wrapper"><label for="description">Digite uma descrição para essa ideia:</label>
+        <textarea name="description" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="input-wrapper"><label for="link">Link da ideia:</label>
+        <input type="url" name="link">
+    </div>
+
+    <a href= "#" onclick="onoff()">Voltar</a>
+    <button>Salvar</button>
+    
+
+                
+                        
+                        
+                       
+                        
+    
+    
+    
+    
+    
+    
+</form>
+</div>
+</div>
+
+<div id="modal2" class="hide">
+    <div class="content">
+        <h1>Ideias para a crise</h1>
+
+        
+    </div>
+
+</div>     
+ <!--Functions in JS-->      
+					
+function onoff(){
+    document 
+        .querySelector("#modal")
+        .classList
+        .toggle("hide")
+            <script src="scripts.js"></script>
+
+
+            
+            
+
+        </body>
+    
+</html>
